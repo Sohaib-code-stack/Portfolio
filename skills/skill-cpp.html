@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript — Sohaib</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow:wght@400;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript — Sohaib</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Barlow:wght@400;600;700;900&family=Barlow+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- PAGE TRANSITION OVERLAY -->
+    <div class="page-transition" id="pageTransition">
+      <div class="pt-strip"></div>
+      <div class="pt-strip"></div>
+      <div class="pt-strip"></div>
+      <div class="pt-strip"></div>
+    </div>
 
-<!-- PAGE TRANSITION OVERLAY -->
-<div class="page-transition" id="pageTransition">
-  <div class="pt-strip"></div>
-  <div class="pt-strip"></div>
-  <div class="pt-strip"></div>
-  <div class="pt-strip"></div>
-</div>
-
-<!-- ─── PROJECT MODAL ─── -->
-<!--
+    <!-- ─── PROJECT MODAL ─── -->
+    <!--
   HOW TO USE:
   Each project card needs class="project-card has-modal" and these data attributes:
     data-title   = "Project Name"
@@ -29,63 +31,68 @@
                OR  "https://www.youtube.com/embed/VIDEO_ID"  (YouTube)
                Leave data-video blank for a placeholder.
 -->
-<div class="modal-overlay" id="projectModal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div>
-        <div class="modal-title">Project Title</div>
-        <div class="modal-type">Category</div>
+    <div class="modal-overlay" id="projectModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title">Project Title</div>
+            <div class="modal-type">Category</div>
+          </div>
+          <button class="modal-close" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-video-wrap"></div>
+        <div class="modal-footer">
+          <p class="modal-desc">Description goes here.</p>
+          <a href="#" target="_blank" class="modal-github-btn">
+            <span class="btn-icon">⌥</span> View on GitHub
+          </a>
+        </div>
       </div>
-      <button class="modal-close" aria-label="Close">✕</button>
     </div>
-    <div class="modal-video-wrap"></div>
-    <div class="modal-footer">
-      <p class="modal-desc">Description goes here.</p>
-      <a href="#" target="_blank" class="modal-github-btn">
-        <span class="btn-icon">⌥</span> View on GitHub
-      </a>
-    </div>
-  </div>
-</div>
 
-<nav>
-  <a href="../index.html" class="nav-logo" data-transition>S<span>.</span>PORTFOLIO</a>
-  <ul>
-    <li><a href="../index.html#skills" data-transition>Skills</a></li>
-    <li><a href="../index.html#projects" data-transition>Projects</a></li>
-    <li><a href="../index.html#contact" data-transition>Contact</a></li>
-  </ul>
-</nav>
+    <nav>
+      <a href="../index.html" class="nav-logo" data-transition
+        >S<span>.</span>PORTFOLIO</a
+      >
+      <ul>
+        <li><a href="../index.html#skills" data-transition>Skills</a></li>
+        <li><a href="../index.html#projects" data-transition>Projects</a></li>
+        <li><a href="../index.html#contact" data-transition>Contact</a></li>
+      </ul>
+    </nav>
 
-<div class="skill-page-wrap">
+    <div class="skill-page-wrap">
+      <a href="../index.html" class="skill-back" data-transition
+        >Back to Skills</a
+      >
 
-  <a href="../index.html" class="skill-back" data-transition>Back to Skills</a>
+      <!-- Skill Hero Panel -->
+      <div class="skill-hero reveal" data-skill-bg="JS">
+        <div>
+          <div class="skill-hero-eyebrow">Skill Showcase</div>
+          <h1 class="skill-hero-title">C++</h1>
+          <p class="skill-hero-desc">
+            Where I learned to think about memory, performance, and how
+            computers actually work. I've used C++ for coursework and
+            systems-level projects — it keeps everything else feeling easy by
+            comparison.
+          </p>
+        </div>
+        <div class="skill-hero-badge">
+          <span class="skill-hero-badge-icon">⚡</span>
+          <span class="skill-hero-badge-label">JS</span>
+        </div>
+      </div>
 
-  <!-- Skill Hero Panel -->
-  <div class="skill-hero reveal" data-skill-bg="JS">
-    <div>
-      <div class="skill-hero-eyebrow">Skill Showcase</div>
-      <h1 class="skill-hero-title">JAVA<br>SCRIPT</h1>
-      <p class="skill-hero-desc">
-        The backbone of interactive web experiences. I use JavaScript for DOM manipulation,
-        async logic, animations, and building full client-side applications — including this portfolio.
-      </p>
-    </div>
-    <div class="skill-hero-badge">
-      <span class="skill-hero-badge-icon">⚡</span>
-      <span class="skill-hero-badge-label">JS</span>
-    </div>
-  </div>
+      <!-- Projects Header -->
+      <div class="skill-projects-header reveal">
+        <span class="s-num">◈</span>
+        <h2 class="s-title">MINI PROJECTS</h2>
+        <hr class="s-rule" />
+      </div>
 
-  <!-- Projects Header -->
-  <div class="skill-projects-header reveal">
-    <span class="s-num">◈</span>
-    <h2 class="s-title">MINI PROJECTS</h2>
-    <hr class="s-rule" />
-  </div>
-
-  <!-- Projects Grid -->
-  <!--
+      <!-- Projects Grid -->
+      <!--
     ════════════════════════════════════════════════════
     TO ADD A PROJECT:
     1. Copy a project-card div below
@@ -96,72 +103,74 @@
             data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
     ════════════════════════════════════════════════════
   -->
-  <section class="skill-projects-grid reveal">
+      <section class="skill-projects-grid reveal">
+        <div
+          class="project-card has-modal"
+          data-title="Virtual Birthday Card"
+          data-type="Interactive UI"
+          data-desc="A fully animated interactive card with layered reveal animations and confetti bursts, written in vanilla JS."
+          data-github="https://github.com/Sohaib-code-stack/"
+          data-video=""
+        >
+          <!-- data-video is empty → shows placeholder. Replace with your video path or YouTube URL -->
+          <span class="project-card-panel-num">01</span>
+          <div class="project-type">Interactive UI</div>
+          <h3 class="project-title">Virtual Birthday Card</h3>
+          <p class="project-desc">
+            A fully animated interactive card with layered reveal animations,
+            confetti bursts, and custom transitions — all written in vanilla JS.
+          </p>
+          <div class="project-stack">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+        </div>
 
-    <div class="project-card has-modal"
-         data-title="Virtual Birthday Card"
-         data-type="Interactive UI"
-         data-desc="A fully animated interactive card with layered reveal animations and confetti bursts, written in vanilla JS."
-         data-github="https://github.com/Sohaib-code-stack/"
-         data-video="">
-      <!-- data-video is empty → shows placeholder. Replace with your video path or YouTube URL -->
-      <span class="project-card-panel-num">01</span>
-      <div class="project-type">Interactive UI</div>
-      <h3 class="project-title">Virtual Birthday Card</h3>
-      <p class="project-desc">
-        A fully animated interactive card with layered reveal animations, confetti bursts,
-        and custom transitions — all written in vanilla JS.
-      </p>
-      <div class="project-stack">
-        <span class="chip">HTML</span>
-        <span class="chip">CSS</span>
-        <span class="chip">JavaScript</span>
-      </div>
+        <div
+          class="project-card has-modal"
+          data-title="This Portfolio"
+          data-type="DOM Manipulation"
+          data-desc="The page transition system, scroll-reveal observer, and modal logic on this very site — all hand-written JavaScript."
+          data-github="https://github.com/Sohaib-code-stack/"
+          data-video=""
+        >
+          <span class="project-card-panel-num">02</span>
+          <div class="project-type">DOM Manipulation</div>
+          <h3 class="project-title">This Portfolio</h3>
+          <p class="project-desc">
+            The page transition system, scroll-reveal observer, and contact form
+            logic on this very site — all hand-written JavaScript with no
+            frameworks.
+          </p>
+          <div class="project-stack">
+            <span class="chip">JavaScript</span>
+            <span class="chip">CSS Animations</span>
+          </div>
+        </div>
+
+        <!-- Empty placeholder slots — replace with real projects as you build them -->
+        <div class="project-card placeholder">
+          <div class="placeholder-inner">
+            <span class="placeholder-cross">+ + +</span>
+            <span class="placeholder-label">More coming soon</span>
+          </div>
+        </div>
+
+        <div class="project-card placeholder">
+          <div class="placeholder-inner">
+            <span class="placeholder-cross">+ + +</span>
+            <span class="placeholder-label">More coming soon</span>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div class="project-card has-modal"
-         data-title="This Portfolio"
-         data-type="DOM Manipulation"
-         data-desc="The page transition system, scroll-reveal observer, and modal logic on this very site — all hand-written JavaScript."
-         data-github="https://github.com/Sohaib-code-stack/"
-         data-video="">
-      <span class="project-card-panel-num">02</span>
-      <div class="project-type">DOM Manipulation</div>
-      <h3 class="project-title">This Portfolio</h3>
-      <p class="project-desc">
-        The page transition system, scroll-reveal observer, and contact form logic on this
-        very site — all hand-written JavaScript with no frameworks.
-      </p>
-      <div class="project-stack">
-        <span class="chip">JavaScript</span>
-        <span class="chip">CSS Animations</span>
-      </div>
-    </div>
+    <footer>
+      <span class="footer-logo">S. PORTFOLIO</span>
+      <span class="footer-copy">© 2025 Sohaib Ahmed</span>
+    </footer>
 
-    <!-- Empty placeholder slots — replace with real projects as you build them -->
-    <div class="project-card placeholder">
-      <div class="placeholder-inner">
-        <span class="placeholder-cross">+ + +</span>
-        <span class="placeholder-label">More coming soon</span>
-      </div>
-    </div>
-
-    <div class="project-card placeholder">
-      <div class="placeholder-inner">
-        <span class="placeholder-cross">+ + +</span>
-        <span class="placeholder-label">More coming soon</span>
-      </div>
-    </div>
-
-  </section>
-
-</div>
-
-<footer>
-  <span class="footer-logo">S. PORTFOLIO</span>
-  <span class="footer-copy">© 2025 Sohaib Ahmed</span>
-</footer>
-
-<script src="../script.js"></script>
-</body>
+    <script src="../script.js"></script>
+  </body>
 </html>
