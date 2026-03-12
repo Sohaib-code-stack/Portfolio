@@ -81,7 +81,6 @@ nav ul a:hover {
   padding: 32px 24px 0;
 }
 
-/* HERO */
 #hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -133,25 +132,6 @@ nav ul a:hover {
   bottom: 20px;
   right: -10px;
   z-index: 1000;
-}
-.avatar-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  pointer-events: none;
-  overflow: hidden;
-}
-.avatar-wrap svg {
-  width: 100%;
-  max-width: 260px;
-  height: auto;
-  display: block;
-  transform: translateY(8px);
 }
 .hero-right-content {
   position: relative;
@@ -305,7 +285,6 @@ nav ul a:hover {
   margin-top: 3px;
 }
 
-/* SECTION HEADER */
 .s-header {
   margin: 56px 0 0;
   display: flex;
@@ -336,7 +315,6 @@ nav ul a:hover {
   margin-left: 4px;
 }
 
-/* SKILLS */
 .skills-grid {
   margin-top: 20px;
   display: grid;
@@ -375,10 +353,6 @@ nav ul a:hover {
   text-transform: uppercase;
   color: var(--paper);
 }
-.skill-cat-head-icon {
-  font-size: 1rem;
-  opacity: 0.7;
-}
 .skill-list {
   padding: 16px 20px;
   display: flex;
@@ -412,7 +386,6 @@ nav ul a:hover {
   transform: rotate(45deg);
 }
 
-/* PROJECTS */
 .projects-grid {
   margin-top: 20px;
   display: grid;
@@ -543,7 +516,6 @@ nav ul a:hover {
   display: block;
 }
 
-/* CONTACT */
 .contact-grid {
   margin-top: 20px;
   margin-bottom: 64px;
@@ -731,7 +703,6 @@ nav ul a:hover {
   margin-top: 3px;
 }
 
-/* FOOTER */
 footer {
   background: var(--ink);
   border-top: 2px solid rgba(255, 255, 255, 0.05);
@@ -754,7 +725,6 @@ footer {
   color: rgba(255, 255, 255, 0.15);
 }
 
-/* REVEAL */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -784,9 +754,7 @@ footer {
   animation-delay: 0.5s;
 }
 
-/* RESPONSIVE */
 
-/* Tablet (<=900px) */
 @media (max-width: 900px) {
   #hero {
     grid-template-columns: 1fr;
@@ -832,7 +800,6 @@ footer {
   }
 }
 
-/* Mobile (<=600px) */
 @media (max-width: 600px) {
   nav {
     padding: 0 16px;
@@ -941,7 +908,6 @@ footer {
   }
 }
 
-/* Small phones (<=380px) */
 @media (max-width: 380px) {
   nav ul a {
     font-size: 0.68rem;
@@ -964,7 +930,6 @@ footer {
   }
 }
 
-/* ─── PAGE TRANSITION ─── */
 .page-transition {
   position: fixed;
   inset: 0;
@@ -998,7 +963,6 @@ footer {
   transform: translateY(-100%);
 }
 
-/* accent bar on each strip */
 .pt-strip::after {
   content: '';
   position: absolute;
@@ -1008,7 +972,6 @@ footer {
   opacity: 0.6;
 }
 
-/* ─── SKILL ITEMS AS LINKS ─── */
 a.skill-item {
   text-decoration: none;
 }
@@ -1034,7 +997,6 @@ a.skill-item:hover .skill-arrow {
   transform: translateX(0);
 }
 
-/* ─── SKILL PAGE ─── */
 .skill-page-wrap {
   max-width: 1160px;
   margin: 0 auto;
@@ -1156,9 +1118,6 @@ a.skill-item:hover .skill-arrow {
   box-shadow: var(--shadow);
 }
 
-/* reuse project-card styles — already defined */
-
-/* ─── SKILL PAGE RESPONSIVE ─── */
 @media (max-width: 700px) {
   .skill-hero {
     grid-template-columns: 1fr;
@@ -1172,7 +1131,6 @@ a.skill-item:hover .skill-arrow {
   .skill-page-wrap { padding: 16px 12px 48px; }
 }
 
-/* ─── PROJECT MODAL ─── */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1204,7 +1162,6 @@ a.skill-item:hover .skill-arrow {
   transform: translateY(0);
 }
 
-/* top bar */
 .modal-header {
   background: var(--ink);
   padding: 14px 20px;
@@ -1249,7 +1206,6 @@ a.skill-item:hover .skill-arrow {
   background: var(--accent);
 }
 
-/* video area */
 .modal-video-wrap {
   position: relative;
   width: 100%;
@@ -1264,7 +1220,6 @@ a.skill-item:hover .skill-arrow {
   display: block;
   border: none;
 }
-/* placeholder when no video set */
 .modal-video-placeholder {
   width: 100%;
   height: 100%;
@@ -1286,7 +1241,6 @@ a.skill-item:hover .skill-arrow {
   opacity: 0.15;
 }
 
-/* footer */
 .modal-footer {
   padding: 20px 24px;
   border-top: 3px solid var(--ink);
@@ -1330,7 +1284,6 @@ a.skill-item:hover .skill-arrow {
 }
 .modal-github-btn .btn-icon { font-size: 1rem; }
 
-/* make project cards look clickable */
 .project-card.has-modal::after {
   content: '▶ PREVIEW';
   position: absolute;

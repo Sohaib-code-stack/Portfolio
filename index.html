@@ -18,6 +18,25 @@
       <div class="pt-strip"></div>
     </div>
 
+    <div class="modal-overlay" id="projectModal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title">Project Title</div>
+            <div class="modal-type">Category</div>
+          </div>
+          <button class="modal-close" aria-label="Close">✕</button>
+        </div>
+        <div class="modal-video-wrap"></div>
+        <div class="modal-footer">
+          <p class="modal-desc">Description goes here.</p>
+          <a href="#" target="_blank" class="modal-github-btn">
+            <span class="btn-icon">⌥</span> View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
     <nav>
       <a href="#hero" class="nav-logo">S<span>.</span>PORTFOLIO</a>
       <ul>
@@ -89,7 +108,6 @@
       <section id="skills" class="skills-grid reveal">
         <div class="skill-cat">
           <div class="skill-cat-head dev">
-            <span class="skill-cat-head-icon">⚙</span>
             <span class="skill-cat-head-label">Development</span>
           </div>
           <div class="skill-list">
@@ -131,7 +149,6 @@
         </div>
         <div class="skill-cat">
           <div class="skill-cat-head tools">
-            <span class="skill-cat-head-icon">◈</span>
             <span class="skill-cat-head-label">Tools &amp; Game Dev</span>
           </div>
           <div class="skill-list">
@@ -173,7 +190,6 @@
         </div>
         <div class="skill-cat">
           <div class="skill-cat-head art">
-            <span class="skill-cat-head-icon">✦</span>
             <span class="skill-cat-head-label">Creative &amp; Motion</span>
           </div>
           <div class="skill-list">
@@ -237,7 +253,15 @@
       </div>
 
       <section id="projects" class="projects-grid reveal">
-        <div class="project-card">
+        <div
+          class="project-card has-modal"
+          data-title="Scribe"
+          data-type="JS / Python / Electron"
+          data-desc="An AI based chatbot that organizes your files into subjects and
+            explain concepts accordingly"
+          data-github="https://github.com/Sohaib-code-stack/Projects/tree/main/colorblind"
+          data-video="../assets/scribe.mp4"
+        >
           <span class="project-card-panel-num">Panel A</span>
           <div class="project-type">App Development</div>
           <h3 class="project-title">Scribe - AI based student assistant</h3>
@@ -250,7 +274,15 @@
             ><span class="chip">Electron</span>
           </div>
         </div>
-        <div class="project-card">
+        <div
+          class="project-card has-modal"
+          data-title="Scribe"
+          data-type="JS / Python / Electron"
+          data-desc="An AI based chatbot that organizes your files into subjects and
+            explain concepts accordingly"
+          data-github="https://github.com/Sohaib-code-stack/Projects/tree/main/colorblind"
+          data-video="../assets/scribe.mp4"
+        >
           <span class="project-card-panel-num">Panel B</span>
           <div class="project-type">Game Development</div>
           <h3 class="project-title">Train Simulator</h3>
@@ -262,7 +294,15 @@
             <span class="chip">Godot</span><span class="chip">GDScript</span>
           </div>
         </div>
-        <div class="project-card">
+        <div
+          class="project-card has-modal"
+          data-title="Scribe"
+          data-type="JS / Python / Electron"
+          data-desc="An AI based chatbot that organizes your files into subjects and
+            explain concepts accordingly"
+          data-github="https://github.com/Sohaib-code-stack/Projects/tree/main/colorblind"
+          data-video="../assets/scribe.mp4"
+        >
           <span class="project-card-panel-num">Panel C</span>
           <div class="project-type">Graphic Design</div>
           <h3 class="project-title">AUSPAK International</h3>
@@ -291,7 +331,7 @@
       </div>
 
       <section id="contact" class="contact-grid reveal">
-        <div class="contact-left" data-watermark="TALK">
+        <div class="contact-left" data-watermark="SHB">
           <div class="contact-eyebrow">Open to opportunities</div>
           <h2 class="contact-h">LET'S WORK<br />TOGETHER.</h2>
           <p class="contact-sub">
@@ -316,9 +356,7 @@
                 placeholder="Tell me about your project..."
               ></textarea>
             </div>
-            <button class="cf-submit" onclick="handleSubmit(event)">
-              Send Message →
-            </button>
+            <button class="cf-submit" id="submitBtn">Send Message →</button>
           </div>
         </div>
         <div class="contact-right">
@@ -368,5 +406,6 @@
     <footer>
       <span class="footer-logo">S. PORTFOLIO</span>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

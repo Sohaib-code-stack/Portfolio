@@ -1,6 +1,5 @@
 console.log('script loaded successfully');
 
-/* ─── PAGE TRANSITION ─── */
 const transition = document.getElementById('pageTransition');
 
 function runExit(href) {
@@ -37,7 +36,6 @@ document.addEventListener('click', (e) => {
   runExit(link.getAttribute('href'));
 });
 
-/* ─── PROJECT MODAL ─── */
 const overlay = document.getElementById('projectModal');
 
 function openModal(card) {
@@ -46,29 +44,25 @@ function openModal(card) {
   const title   = card.dataset.title   || '';
   const type    = card.dataset.type    || '';
   const desc    = card.dataset.desc    || '';
-  const video   = card.dataset.video   || '';   // path to mp4 or youtube embed URL
+  const video   = card.dataset.video   || '';   
   const github  = card.dataset.github  || '#';
 
-  // populate
   overlay.querySelector('.modal-title').textContent = title;
   overlay.querySelector('.modal-type').textContent  = type;
   overlay.querySelector('.modal-desc').textContent  = desc;
   overlay.querySelector('.modal-github-btn').href   = github;
 
-  // video
   const videoWrap = overlay.querySelector('.modal-video-wrap');
   videoWrap.innerHTML = '';
 
   if (video) {
     if (video.includes('youtube.com') || video.includes('youtu.be')) {
-      // YouTube embed
       const iframe = document.createElement('iframe');
       iframe.src = video + '?autoplay=1&rel=0';
       iframe.allow = 'autoplay; fullscreen';
       iframe.allowFullscreen = true;
       videoWrap.appendChild(iframe);
     } else {
-      // Local video file
       const vid = document.createElement('video');
       vid.src = video;
       vid.controls = true;
@@ -77,7 +71,6 @@ function openModal(card) {
       videoWrap.appendChild(vid);
     }
   } else {
-    // Placeholder
     videoWrap.innerHTML = `
       <div class="modal-video-placeholder">
         <span>▶</span>
@@ -94,31 +87,25 @@ function closeModal() {
   overlay.classList.remove('is-open');
   document.body.style.overflow = '';
 
-  // Stop any playing video after transition
   setTimeout(() => {
     const videoWrap = overlay.querySelector('.modal-video-wrap');
     videoWrap.innerHTML = '';
   }, 350);
 }
 
-// Open on card click
 document.addEventListener('click', (e) => {
   const card = e.target.closest('.project-card.has-modal');
   if (card) { openModal(card); return; }
 
-  // Close on overlay background click
   if (e.target === overlay) closeModal();
 
-  // Close button
   if (e.target.closest('.modal-close')) closeModal();
 });
 
-// Close on Escape
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
 
-/* ─── SCROLL REVEAL ─── */
 const revealEls = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver(entries => {
@@ -128,9 +115,12 @@ if ('IntersectionObserver' in window) {
   }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => io.observe(el));
 }
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('submitBtn').addEventListener('click', handleSubmit);
+});
 
-/* ─── CONTACT FORM ─── */
 function handleSubmit(e) {
+  console.log('button pressed');
   const btn = e.target;
   btn.textContent = 'Message Sent \u2713';
   btn.style.background = '#27ae60';
